@@ -28,6 +28,8 @@ namespace OOPHomework2Matrix
             buttonToplama.Click += new System.EventHandler(ButtonToplama_Click);
             buttonCarpma.Click += new System.EventHandler(ButtonCarpim_Click);
             buttonMatrisTers.Click += new System.EventHandler(ButtonMatrisTers_Click);
+            buttonMatrisTranspoz.Click += new System.EventHandler(ButtonMatrisTranspoz_Click);
+            buttonMatrisIz.Click += new System.EventHandler(ButtonMatrisIz_Click);
 
             for (int i = 0; i < numericUpDown1.Value; i++)
             {
@@ -251,6 +253,25 @@ namespace OOPHomework2Matrix
                 }
                 textBoxSonuc.Text += "\r\n";
             }
+        }
+
+        private void ButtonMatrisTranspoz_Click(Object sender, EventArgs e)
+        {
+            List<List<int>> sonuc = Matrix.MatrisTranspoz(matris1);
+
+            for (int i = 0; i < sonuc.Count; i++)
+            {
+                for (int j = 0; j < sonuc[i].Count; j++)
+                {
+                    textBoxSonuc.Text += sonuc[i][j] + " ";
+                }
+                textBoxSonuc.Text += "\r\n";
+            }
+        }
+
+        private void ButtonMatrisIz_Click(Object sender, EventArgs e)
+        {
+            textBoxSonuc.Text = Matrix.MatrisIz(matris1).ToString();
         }
     }
 }

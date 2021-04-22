@@ -37,6 +37,8 @@ namespace OOPHomework2Matrix
             this.buttonCarpma = new System.Windows.Forms.Button();
             this.textBoxSonuc = new System.Windows.Forms.TextBox();
             this.buttonMatrisTers = new System.Windows.Forms.Button();
+            this.buttonMatrisIz = new System.Windows.Forms.Button();
+            this.buttonMatrisTranspoz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -45,7 +47,7 @@ namespace OOPHomework2Matrix
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(23, 12);
+            this.numericUpDown1.Location = new System.Drawing.Point(45, 12);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             2,
             0,
@@ -62,7 +64,7 @@ namespace OOPHomework2Matrix
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(80, 12);
+            this.numericUpDown2.Location = new System.Drawing.Point(102, 12);
             this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
@@ -79,7 +81,7 @@ namespace OOPHomework2Matrix
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(713, 12);
+            this.numericUpDown3.Location = new System.Drawing.Point(735, 12);
             this.numericUpDown3.Minimum = new decimal(new int[] {
             2,
             0,
@@ -96,7 +98,7 @@ namespace OOPHomework2Matrix
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(770, 12);
+            this.numericUpDown4.Location = new System.Drawing.Point(792, 12);
             this.numericUpDown4.Minimum = new decimal(new int[] {
             2,
             0,
@@ -113,7 +115,7 @@ namespace OOPHomework2Matrix
             // 
             // buttonToplama
             // 
-            this.buttonToplama.Location = new System.Drawing.Point(598, 99);
+            this.buttonToplama.Location = new System.Drawing.Point(617, 100);
             this.buttonToplama.Name = "buttonToplama";
             this.buttonToplama.Size = new System.Drawing.Size(36, 30);
             this.buttonToplama.TabIndex = 8;
@@ -122,7 +124,7 @@ namespace OOPHomework2Matrix
             // 
             // buttonCarpma
             // 
-            this.buttonCarpma.Location = new System.Drawing.Point(598, 146);
+            this.buttonCarpma.Location = new System.Drawing.Point(617, 147);
             this.buttonCarpma.Name = "buttonCarpma";
             this.buttonCarpma.Size = new System.Drawing.Size(36, 30);
             this.buttonCarpma.TabIndex = 9;
@@ -147,11 +149,31 @@ namespace OOPHomework2Matrix
             this.buttonMatrisTers.Text = "Matrisin Tersi";
             this.buttonMatrisTers.UseVisualStyleBackColor = true;
             // 
+            // buttonMatrisIz
+            // 
+            this.buttonMatrisIz.Location = new System.Drawing.Point(12, 425);
+            this.buttonMatrisIz.Name = "buttonMatrisIz";
+            this.buttonMatrisIz.Size = new System.Drawing.Size(116, 30);
+            this.buttonMatrisIz.TabIndex = 12;
+            this.buttonMatrisIz.Text = "Matrisin İzii";
+            this.buttonMatrisIz.UseVisualStyleBackColor = true;
+            // 
+            // buttonMatrisTranspoz
+            // 
+            this.buttonMatrisTranspoz.Location = new System.Drawing.Point(12, 475);
+            this.buttonMatrisTranspoz.Name = "buttonMatrisTranspoz";
+            this.buttonMatrisTranspoz.Size = new System.Drawing.Size(116, 30);
+            this.buttonMatrisTranspoz.TabIndex = 13;
+            this.buttonMatrisTranspoz.Text = "Matrisin Transpozu";
+            this.buttonMatrisTranspoz.UseVisualStyleBackColor = true;
+            // 
             // MatrixCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1339, 576);
+            this.Controls.Add(this.buttonMatrisTranspoz);
+            this.Controls.Add(this.buttonMatrisIz);
             this.Controls.Add(this.buttonMatrisTers);
             this.Controls.Add(this.textBoxSonuc);
             this.Controls.Add(this.buttonCarpma);
@@ -182,6 +204,8 @@ namespace OOPHomework2Matrix
         private System.Windows.Forms.Button buttonCarpma;
         private System.Windows.Forms.TextBox textBoxSonuc;
         private System.Windows.Forms.Button buttonMatrisTers;
+        private System.Windows.Forms.Button buttonMatrisIz;
+        private System.Windows.Forms.Button buttonMatrisTranspoz;
     }
 }
 
