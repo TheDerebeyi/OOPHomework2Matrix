@@ -16,6 +16,7 @@ namespace OOPHomework2Matrix
     {
         private List<List<NumericUpDown>> matris1 = new List<List<NumericUpDown>>();
         private List<List<NumericUpDown>> matris2 = new List<List<NumericUpDown>>();
+        const int ELEMANLAR_ARASI_BOSLUK = 35, GENISLIK = 30, UST_BOSLUK = 20;
 
         public MatrixCalculator()
         {
@@ -38,13 +39,9 @@ namespace OOPHomework2Matrix
                 for (int j = 0; j < numericUpDown2.Value; j++)
                 {
                     matris1[i].Add(new NumericUpDown());
-                    matris1[i][j].Left = (j+1) * 40;
-                    matris1[i][j].Top = (i+1) * 40;
-                    matris1[i][j].Width = 25;
-                    //matris1.Add(new TextBox());
-                    //matris1[i * (int)numericUpDown2.Value + j].Left = (j+1) * 40;
-                    //matris1[i * (int)numericUpDown2.Value + j].Top = (i+1) * 40;
-                    //matris1[i * (int)numericUpDown2.Value + j].Width = 25;
+                    matris1[i][j].Left = (j+1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Top = UST_BOSLUK + (i+1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Width = GENISLIK;
                 }
             }
 
@@ -55,9 +52,9 @@ namespace OOPHomework2Matrix
                 for (int j = 0; j < numericUpDown4.Value; j++)
                 {
                     matris2[i].Add(new NumericUpDown());
-                    matris2[i][j].Left = this.Width/2 + (j + 1) * 40;
-                    matris2[i][j].Top = (i + 1) * 40;
-                    matris2[i][j].Width = 25;
+                    matris2[i][j].Left = this.Width/2 + (j + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Top = UST_BOSLUK + (i + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Width = GENISLIK;
                 }
             }
 
@@ -98,9 +95,9 @@ namespace OOPHomework2Matrix
                 for (int j = 0; j < numericUpDown2.Value; j++)
                 {
                     matris1[i].Add(new NumericUpDown());
-                    matris1[i][j].Left = (j + 1) * 40;
-                    matris1[i][j].Top = (i + 1) * 40;
-                    matris1[i][j].Width = 25;
+                    matris1[i][j].Left = (j + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Top = UST_BOSLUK + (i + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Width = GENISLIK;
                 }
             }
 
@@ -131,9 +128,9 @@ namespace OOPHomework2Matrix
                 for (int j = 0; j < numericUpDown2.Value; j++)
                 {
                     matris1[i].Add(new NumericUpDown());
-                    matris1[i][j].Left = (j + 1) * 40;
-                    matris1[i][j].Top = (i + 1) * 40;
-                    matris1[i][j].Width = 25;
+                    matris1[i][j].Left = (j + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Top = UST_BOSLUK + (i + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris1[i][j].Width = GENISLIK;
                 }
             }
 
@@ -164,9 +161,9 @@ namespace OOPHomework2Matrix
                 for (int j = 0; j < numericUpDown4.Value; j++)
                 {
                     matris2[i].Add(new NumericUpDown());
-                    matris2[i][j].Left = this.Width / 2 + (j + 1) * 40;
-                    matris2[i][j].Top = (i + 1) * 40;
-                    matris2[i][j].Width = 25;
+                    matris2[i][j].Left = this.Width / 2 + (j + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Top = UST_BOSLUK + (i + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Width = GENISLIK;
                 }
             }
 
@@ -198,9 +195,9 @@ namespace OOPHomework2Matrix
             for (int j = 0; j < numericUpDown4.Value; j++)
                 {
                     matris2[i].Add(new NumericUpDown());
-                    matris2[i][j].Left = this.Width / 2 + (j + 1) * 40;
-                    matris2[i][j].Top = (i + 1) * 40;
-                    matris2[i][j].Width = 25;
+                    matris2[i][j].Left = this.Width / 2 + (j + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Top = UST_BOSLUK + (i + 1) * ELEMANLAR_ARASI_BOSLUK;
+                    matris2[i][j].Width = GENISLIK;
                 }
             }
 
