@@ -64,7 +64,7 @@ namespace OOPHomework2Matrix
                     int toplam = 0;
                     for (int k = 0; k < matris2.Count; k++)
                     {
-                        toplam += (int) matris1[i][k].Value * (int) matris2[k][j].Value;
+                        toplam += (int)matris1[i][k].Value * (int)matris2[k][j].Value;
                     }
                     sonucList[i].Add(toplam);
                 }
@@ -157,31 +157,37 @@ namespace OOPHomework2Matrix
 
             for (int i = 0; i < matris1.Count; i++)
             {
-                payda = matrisKopya[i][i];
-                for (int j = 0; j < matris1.Count; j++)
+                if (matrisKopya[i][i] != 0)
                 {
-                    matrisKopya[i][j] /= payda;
-                    sonucList[i][j] /= payda;
-                }
-
-                for (int k = 1+i; k < matris1.Count; k++)
-                {
-                    carpim = matrisKopya[k][i] * -1;
-                    for (int l = 0; l < matris1.Count; l++)
+                    payda = matrisKopya[i][i];
+                    for (int j = 0; j < matris1.Count; j++)
                     {
-                        matrisKopya[k][l] += carpim * matrisKopya[i][l];
-                        sonucList[k][l] += carpim * sonucList[i][l];
+                        matrisKopya[i][j] /= payda;
+                        sonucList[i][j] /= payda;
                     }
                 }
-            }
-
-            for (int i = matris1.Count; i > 0; i--)
-            {
-                payda = matrisKopya[i][i];
-                for (int j = 0; j < matris1.Count; j++)
+                else
                 {
-                    matrisKopya[i][j] /= payda;
-                    sonucList[i][j] /= payda;
+                    for (int j = 0; j < matrisKopya.Count; j++)
+                    {
+                        if (matrisKopya[j][i] != 0)
+                        {
+                            payda = matrisKopya[j][i];
+                            for (int l = 0; l < matris1.Count; l++)
+                            {
+                                matrisKopya[i][l] += matrisKopya[j][l] / payda;
+                                sonucList[i][l] += sonucList[j][l] / payda;
+                            }
+
+                            payda = matrisKopya[i][i];
+                            for (int k = 0; j < matris1.Count; j++)
+                            {
+                                matrisKopya[i][k] /= payda;
+                                sonucList[i][k] /= payda;
+                            }
+                            break;
+                        }
+                    }
                 }
 
                 for (int k = 1 + i; k < matris1.Count; k++)
@@ -192,6 +198,37 @@ namespace OOPHomework2Matrix
                         matrisKopya[k][l] += carpim * matrisKopya[i][l];
                         sonucList[k][l] += carpim * sonucList[i][l];
                     }
+                }
+            }
+
+            for (int i = matris1.Count - 2; i >= 0; i--)
+            {
+                for (int k = i; k >= 0; k--)
+                {
+                    carpim = matrisKopya[k][i + 1] * -1;
+                    matrisKopya[k][i + 1] += carpim * matrisKopya[i + 1][i + 1];
+
+                    for (int l = 0; l < matris1.Count; l++)
+                    {
+                        sonucList[k][l] += carpim * sonucList[i + 1][l];
+                    }
+
+
+                    string msg = "";
+
+
+                    foreach (var a in sonucList)
+                    {
+                        foreach (var UPPER in a)
+                        {
+                            msg += UPPER + " ";
+                        }
+
+                        msg += "\r\n";
+                    }
+
+                    MessageBox.Show(msg);
+
                 }
             }
 
