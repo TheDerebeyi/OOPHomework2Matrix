@@ -39,9 +39,9 @@ namespace OOPHomework2Matrix
             this.buttonMatrisTers = new System.Windows.Forms.Button();
             this.buttonMatrisIz = new System.Windows.Forms.Button();
             this.buttonMatrisTranspoz = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonMatrisTranspoz2 = new System.Windows.Forms.Button();
+            this.buttonMatrisIz2 = new System.Windows.Forms.Button();
+            this.buttonMatrisTers2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +49,12 @@ namespace OOPHomework2Matrix
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonKaydet = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonGecmis = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -58,7 +64,7 @@ namespace OOPHomework2Matrix
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(57, 21);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             2,
             0,
@@ -76,7 +82,7 @@ namespace OOPHomework2Matrix
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(141, 21);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
@@ -94,7 +100,7 @@ namespace OOPHomework2Matrix
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(580, 21);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown3.Minimum = new decimal(new int[] {
             2,
             0,
@@ -112,7 +118,7 @@ namespace OOPHomework2Matrix
             // numericUpDown4
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(665, 22);
-            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown4.Minimum = new decimal(new int[] {
             2,
             0,
@@ -130,7 +136,7 @@ namespace OOPHomework2Matrix
             // buttonToplama
             // 
             this.buttonToplama.Location = new System.Drawing.Point(495, 100);
-            this.buttonToplama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonToplama.Margin = new System.Windows.Forms.Padding(2);
             this.buttonToplama.Name = "buttonToplama";
             this.buttonToplama.Size = new System.Drawing.Size(27, 24);
             this.buttonToplama.TabIndex = 8;
@@ -140,7 +146,7 @@ namespace OOPHomework2Matrix
             // buttonCarpma
             // 
             this.buttonCarpma.Location = new System.Drawing.Point(495, 142);
-            this.buttonCarpma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCarpma.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCarpma.Name = "buttonCarpma";
             this.buttonCarpma.Size = new System.Drawing.Size(27, 24);
             this.buttonCarpma.TabIndex = 9;
@@ -149,18 +155,18 @@ namespace OOPHomework2Matrix
             // 
             // textBoxSonuc
             // 
-            this.textBoxSonuc.Location = new System.Drawing.Point(141, 296);
-            this.textBoxSonuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSonuc.Location = new System.Drawing.Point(141, 309);
+            this.textBoxSonuc.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSonuc.Multiline = true;
             this.textBoxSonuc.Name = "textBoxSonuc";
             this.textBoxSonuc.ReadOnly = true;
-            this.textBoxSonuc.Size = new System.Drawing.Size(352, 128);
+            this.textBoxSonuc.Size = new System.Drawing.Size(349, 128);
             this.textBoxSonuc.TabIndex = 10;
             // 
             // buttonMatrisTers
             // 
-            this.buttonMatrisTers.Location = new System.Drawing.Point(9, 303);
-            this.buttonMatrisTers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMatrisTers.Location = new System.Drawing.Point(9, 315);
+            this.buttonMatrisTers.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMatrisTers.Name = "buttonMatrisTers";
             this.buttonMatrisTers.Size = new System.Drawing.Size(105, 24);
             this.buttonMatrisTers.TabIndex = 11;
@@ -169,8 +175,8 @@ namespace OOPHomework2Matrix
             // 
             // buttonMatrisIz
             // 
-            this.buttonMatrisIz.Location = new System.Drawing.Point(9, 345);
-            this.buttonMatrisIz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMatrisIz.Location = new System.Drawing.Point(9, 357);
+            this.buttonMatrisIz.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMatrisIz.Name = "buttonMatrisIz";
             this.buttonMatrisIz.Size = new System.Drawing.Size(105, 24);
             this.buttonMatrisIz.TabIndex = 12;
@@ -179,49 +185,50 @@ namespace OOPHomework2Matrix
             // 
             // buttonMatrisTranspoz
             // 
-            this.buttonMatrisTranspoz.Location = new System.Drawing.Point(9, 386);
-            this.buttonMatrisTranspoz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMatrisTranspoz.Location = new System.Drawing.Point(9, 398);
+            this.buttonMatrisTranspoz.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMatrisTranspoz.Name = "buttonMatrisTranspoz";
             this.buttonMatrisTranspoz.Size = new System.Drawing.Size(105, 24);
             this.buttonMatrisTranspoz.TabIndex = 13;
             this.buttonMatrisTranspoz.Text = "Matrisin Transpozu";
             this.buttonMatrisTranspoz.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonMatrisTranspoz2
             // 
-            this.button2.Location = new System.Drawing.Point(886, 389);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 24);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Matrisin Transpozu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonMatrisTranspoz2.Location = new System.Drawing.Point(886, 401);
+            this.buttonMatrisTranspoz2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMatrisTranspoz2.Name = "buttonMatrisTranspoz2";
+            this.buttonMatrisTranspoz2.Size = new System.Drawing.Size(107, 24);
+            this.buttonMatrisTranspoz2.TabIndex = 17;
+            this.buttonMatrisTranspoz2.Text = "Matrisin Transpozu";
+            this.buttonMatrisTranspoz2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonMatrisIz2
             // 
-            this.button3.Location = new System.Drawing.Point(886, 349);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 24);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Matrisin İzii";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonMatrisIz2.Location = new System.Drawing.Point(886, 361);
+            this.buttonMatrisIz2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMatrisIz2.Name = "buttonMatrisIz2";
+            this.buttonMatrisIz2.Size = new System.Drawing.Size(107, 24);
+            this.buttonMatrisIz2.TabIndex = 16;
+            this.buttonMatrisIz2.Text = "Matrisin İzii";
+            this.buttonMatrisIz2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonMatrisTers2
             // 
-            this.button4.Location = new System.Drawing.Point(886, 306);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 24);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Matrisin Tersi";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonMatrisTers2.Location = new System.Drawing.Point(886, 318);
+            this.buttonMatrisTers2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMatrisTers2.Name = "buttonMatrisTers2";
+            this.buttonMatrisTers2.Size = new System.Drawing.Size(107, 24);
+            this.buttonMatrisTers2.TabIndex = 15;
+            this.buttonMatrisTers2.Text = "Matrisin Tersi";
+            this.buttonMatrisTers2.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(521, 296);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Location = new System.Drawing.Point(521, 309);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(341, 128);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
@@ -286,11 +293,77 @@ namespace OOPHomework2Matrix
             this.label6.TabIndex = 23;
             this.label6.Text = "Satır:";
             // 
+            // buttonKaydet
+            // 
+            this.buttonKaydet.Location = new System.Drawing.Point(141, 443);
+            this.buttonKaydet.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonKaydet.Name = "buttonKaydet";
+            this.buttonKaydet.Size = new System.Drawing.Size(107, 24);
+            this.buttonKaydet.TabIndex = 25;
+            this.buttonKaydet.Text = "Sonucu Kaydet";
+            this.buttonKaydet.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 288);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Matris 1 İşlemleri";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(883, 291);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Matris 2 İşlemleri";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(137, 288);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Sonuç:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(518, 288);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Geçmiş:";
+            // 
+            // buttonGecmis
+            // 
+            this.buttonGecmis.Location = new System.Drawing.Point(521, 443);
+            this.buttonGecmis.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGecmis.Name = "buttonGecmis";
+            this.buttonGecmis.Size = new System.Drawing.Size(107, 24);
+            this.buttonGecmis.TabIndex = 30;
+            this.buttonGecmis.Text = "Geçmişi Getir";
+            this.buttonGecmis.UseVisualStyleBackColor = true;
+            // 
             // MatrixCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 468);
+            this.Controls.Add(this.buttonGecmis);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.buttonKaydet);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -298,9 +371,9 @@ namespace OOPHomework2Matrix
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonMatrisTranspoz2);
+            this.Controls.Add(this.buttonMatrisIz2);
+            this.Controls.Add(this.buttonMatrisTers2);
             this.Controls.Add(this.buttonMatrisTranspoz);
             this.Controls.Add(this.buttonMatrisIz);
             this.Controls.Add(this.buttonMatrisTers);
@@ -312,7 +385,7 @@ namespace OOPHomework2Matrix
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MatrixCalculator";
             this.Text = "Matrix Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -336,9 +409,9 @@ namespace OOPHomework2Matrix
         private System.Windows.Forms.Button buttonMatrisTers;
         private System.Windows.Forms.Button buttonMatrisIz;
         private System.Windows.Forms.Button buttonMatrisTranspoz;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonMatrisTranspoz2;
+        private System.Windows.Forms.Button buttonMatrisIz2;
+        private System.Windows.Forms.Button buttonMatrisTers2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -346,6 +419,12 @@ namespace OOPHomework2Matrix
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonKaydet;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonGecmis;
     }
 }
 

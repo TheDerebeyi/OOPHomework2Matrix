@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -212,28 +213,20 @@ namespace OOPHomework2Matrix
                     {
                         sonucList[k][l] += carpim * sonucList[i + 1][l];
                     }
-
-
-                    string msg = "";
-
-
-                    foreach (var a in sonucList)
-                    {
-                        foreach (var UPPER in a)
-                        {
-                            msg += UPPER + " ";
-                        }
-
-                        msg += "\r\n";
-                    }
-
-                    MessageBox.Show(msg);
-
                 }
             }
 
             return sonucList;
         }
 
+        public static void MatrisYazdirma(string[] mesaj)
+        {
+            File.AppendAllLines("kayit.dat", mesaj);
+        }
+
+        public static string[] MatrisOkuma()
+        {
+            return File.ReadAllLines("kayit.dat");
+        }
     }
 }

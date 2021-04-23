@@ -29,8 +29,13 @@ namespace OOPHomework2Matrix
             buttonToplama.Click += new System.EventHandler(ButtonToplama_Click);
             buttonCarpma.Click += new System.EventHandler(ButtonCarpim_Click);
             buttonMatrisTers.Click += new System.EventHandler(ButtonMatrisTers_Click);
+            buttonMatrisTers2.Click += new System.EventHandler(ButtonMatrisTers2_Click);
             buttonMatrisTranspoz.Click += new System.EventHandler(ButtonMatrisTranspoz_Click);
+            buttonMatrisTranspoz2.Click += new System.EventHandler(ButtonMatrisTranspoz2_Click);
             buttonMatrisIz.Click += new System.EventHandler(ButtonMatrisIz_Click);
+            buttonMatrisIz2.Click += new System.EventHandler(ButtonMatrisIz2_Click);
+            buttonKaydet.Click += new System.EventHandler(ButtonKaydet_Click);
+            buttonGecmis.Click += new System.EventHandler(ButtonGecmis_Click);
 
             for (int i = 0; i < numericUpDown1.Value; i++)
             {
@@ -214,6 +219,8 @@ namespace OOPHomework2Matrix
         {
             List<List<int>> sonuc = Matrix.MatrisToplami(matris1, matris2);
 
+            textBoxSonuc.Clear();
+
             for (int i = 0; i < sonuc.Count; i++)
             {
                 for (int j = 0; j < sonuc[i].Count; j++)
@@ -227,6 +234,8 @@ namespace OOPHomework2Matrix
         private void ButtonCarpim_Click(Object sender, EventArgs e)
         {
             List<List<int>> sonuc = Matrix.MatrisCarpimi(matris1, matris2);
+
+            textBoxSonuc.Clear();
 
             for (int i = 0; i < sonuc.Count; i++)
             {
@@ -242,6 +251,23 @@ namespace OOPHomework2Matrix
         {
             List<List<decimal>> sonuc = Matrix.MatrisTers(matris1);
 
+            textBoxSonuc.Clear();
+
+            for (int i = 0; i < sonuc.Count; i++)
+            {
+                for (int j = 0; j < sonuc[i].Count; j++)
+                {
+                    textBoxSonuc.Text += sonuc[i][j] + " ";
+                }
+                textBoxSonuc.Text += "\r\n";
+            }
+        }
+        private void ButtonMatrisTers2_Click(Object sender, EventArgs e)
+        {
+            List<List<decimal>> sonuc = Matrix.MatrisTers(matris2);
+
+            textBoxSonuc.Clear();
+
             for (int i = 0; i < sonuc.Count; i++)
             {
                 for (int j = 0; j < sonuc[i].Count; j++)
@@ -256,6 +282,23 @@ namespace OOPHomework2Matrix
         {
             List<List<int>> sonuc = Matrix.MatrisTranspoz(matris1);
 
+            textBoxSonuc.Clear();
+
+            for (int i = 0; i < sonuc.Count; i++)
+            {
+                for (int j = 0; j < sonuc[i].Count; j++)
+                {
+                    textBoxSonuc.Text += sonuc[i][j] + " ";
+                }
+                textBoxSonuc.Text += "\r\n";
+            }
+        }
+        private void ButtonMatrisTranspoz2_Click(Object sender, EventArgs e)
+        {
+            List<List<int>> sonuc = Matrix.MatrisTranspoz(matris2);
+
+            textBoxSonuc.Clear();
+
             for (int i = 0; i < sonuc.Count; i++)
             {
                 for (int j = 0; j < sonuc[i].Count; j++)
@@ -268,7 +311,26 @@ namespace OOPHomework2Matrix
 
         private void ButtonMatrisIz_Click(Object sender, EventArgs e)
         {
+            textBoxSonuc.Clear();
+
             textBoxSonuc.Text = Matrix.MatrisIz(matris1).ToString();
+        }
+
+        private void ButtonMatrisIz2_Click(Object sender, EventArgs e)
+        {
+            textBoxSonuc.Clear();
+
+            textBoxSonuc.Text = Matrix.MatrisIz(matris2).ToString();
+        }
+
+        private void ButtonKaydet_Click(Object sender, EventArgs e)
+        {
+            Matrix.MatrisYazdirma(textBoxSonuc.Lines);
+        }
+
+        private void ButtonGecmis_Click(Object seber, EventArgs e)
+        {
+            richTextBox1.Lines = Matrix.MatrisOkuma();
         }
     }
 }
