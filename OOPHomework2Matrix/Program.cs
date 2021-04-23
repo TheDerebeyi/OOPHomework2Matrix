@@ -116,6 +116,78 @@ namespace OOPHomework2Matrix
             return sonuc;
         }
 
+        static int MatrisDeterminant(List<List<decimal>> matris1)
+        {
+            List<List<decimal>> kopyaMatris = new List<List<decimal>>();
+
+            int determinant = 0;
+
+            if (matris1.Count == 2)
+            {
+                determinant = (int)(matris1[0][0] * matris1[1][1] - matris1[0][1] * matris1[1][0]);
+                return determinant;
+            }
+
+            int satir = 0;
+
+            for (int i = 0; i < matris1.Count; i++)
+            {
+                for (int j = 0; j < matris1[0].Count; j++)
+                {
+                    if (matris1[i][j] == 0)
+                    {
+                        satir = i;
+                    }
+                }
+            }
+
+            List<int> kofaktorList = new List<int>();
+
+            for (int i = 0; i < matris1.Count; i++)
+            {
+                if (satir + i % 2 == 0)
+                {
+                    kofaktorList.Add(1);
+                }
+                else
+                {
+                    kofaktorList.Add(-1);
+                }
+            }
+
+            for (int i = 0; i < matris1.Count; i++)
+            {
+                kopyaMatris.Clear();
+                int indis = 0;
+                for (int j = 0; j < matris1.Count; j++)
+                {
+                    if (j == satir)
+                    {
+                        continue;
+                    }
+
+                    kopyaMatris.Add(new List<decimal>());
+
+                    for (int k = 0; k < matris1.Count; k++)
+                    {
+                        if (k != i)
+                        {
+                            kopyaMatris[indis].Add(matris1[j][k]);
+                        }
+                    }
+                    indis++;
+                }
+                kofaktorList[i] *= Matrix.MatrisDeterminant(kopyaMatris);
+            }
+
+            for (int i = 0; i < matris1.Count; i++)
+            {
+                determinant += (int)matris1[satir][i] * kofaktorList[i];
+            }
+
+            return determinant;
+        }
+
         public static List<List<decimal>> MatrisTers(List<List<NumericUpDown>> matris1)
         {
 
@@ -128,7 +200,6 @@ namespace OOPHomework2Matrix
                 return sonucList;
             }
 
-
             List<List<decimal>> matrisKopya = new List<List<decimal>>();
 
             for (int i = 0; i < matris1.Count; i++)
@@ -138,6 +209,12 @@ namespace OOPHomework2Matrix
                 {
                     matrisKopya[i].Add(matris1[i][j].Value);
                 }
+            }
+
+            if (Matrix.MatrisDeterminant(matrisKopya) == 0)
+            {
+                MessageBox.Show("HATA! Girilen matrisin determinantı sıfır!");
+                return sonucList;
             }
 
             for (int i = 0; i < matris1.Count; i++)
@@ -226,7 +303,13 @@ namespace OOPHomework2Matrix
 
         public static string[] MatrisOkuma()
         {
-            return File.ReadAllLines("kayit.dat");
+            if(File.Exists("kayit.dat")){
+                return File.ReadAllLines("kayit.dat");
+            }
+
+            string[] mesaj = new string[0];
+            return mesaj;
+
         }
     }
 }

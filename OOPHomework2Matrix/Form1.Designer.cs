@@ -55,6 +55,7 @@ namespace OOPHomework2Matrix
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonGecmis = new System.Windows.Forms.Button();
+            this.buttonSifirla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -160,6 +161,7 @@ namespace OOPHomework2Matrix
             this.textBoxSonuc.Multiline = true;
             this.textBoxSonuc.Name = "textBoxSonuc";
             this.textBoxSonuc.ReadOnly = true;
+            this.textBoxSonuc.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxSonuc.Size = new System.Drawing.Size(349, 128);
             this.textBoxSonuc.TabIndex = 10;
             // 
@@ -353,11 +355,22 @@ namespace OOPHomework2Matrix
             this.buttonGecmis.Text = "Geçmişi Getir";
             this.buttonGecmis.UseVisualStyleBackColor = true;
             // 
+            // buttonSifirla
+            // 
+            this.buttonSifirla.Location = new System.Drawing.Point(632, 443);
+            this.buttonSifirla.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSifirla.Name = "buttonSifirla";
+            this.buttonSifirla.Size = new System.Drawing.Size(107, 24);
+            this.buttonSifirla.TabIndex = 31;
+            this.buttonSifirla.Text = "Geçmişi Sıfırla";
+            this.buttonSifirla.UseVisualStyleBackColor = true;
+            // 
             // MatrixCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 468);
+            this.Controls.Add(this.buttonSifirla);
             this.Controls.Add(this.buttonGecmis);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -425,6 +438,7 @@ namespace OOPHomework2Matrix
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonGecmis;
+        private System.Windows.Forms.Button buttonSifirla;
     }
 }
 
