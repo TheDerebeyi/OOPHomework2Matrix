@@ -7,14 +7,16 @@ namespace OOPHomework2Matrix
 {
     public partial class MatrixCalculator : Form
     {
-        private List<List<NumericUpDown>> matris1 = new List<List<NumericUpDown>>();
+        private List<List<NumericUpDown>> matris1 = new List<List<NumericUpDown>>();        //Formda kullanılacak 2 ana matris tanımlanıyor.
         private List<List<NumericUpDown>> matris2 = new List<List<NumericUpDown>>();
+
         const int ELEMANLAR_ARASI_BOSLUK = 35, GENISLIK = 30, UST_BOSLUK = 20, MAX = 99, MIN = -99;
 
         public MatrixCalculator()
         {
             InitializeComponent();
-            numericUpDown1.ValueChanged += new System.EventHandler(NumericUpDown1_ValueChanged);
+
+            numericUpDown1.ValueChanged += new System.EventHandler(NumericUpDown1_ValueChanged);                //Event fonksiyonları ile form controlleri bağlanıyor.
             numericUpDown2.ValueChanged += new System.EventHandler(NumericUpDown2_ValueChanged);
             numericUpDown3.ValueChanged += new System.EventHandler(NumericUpDown3_ValueChanged);
             numericUpDown4.ValueChanged += new System.EventHandler(NumericUpDown4_ValueChanged);
@@ -31,7 +33,7 @@ namespace OOPHomework2Matrix
             buttonGecmis.Click += new System.EventHandler(ButtonGecmis_Click);
             buttonSifirla.Click += new System.EventHandler(GecmisiSifirla_Click);
 
-            for (int i = 0; i < numericUpDown1.Value; i++)
+            for (int i = 0; i < numericUpDown1.Value; i++)                                                      //Default olarak formda 2x2'lik matrisler oluşturuluyor ve özellikleri belirleniyor.
             {
                 matris1.Add(new List<NumericUpDown>());
 
@@ -46,7 +48,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            for (int i = 0; i < numericUpDown3.Value; i++)
+            for (int i = 0; i < numericUpDown3.Value; i++)                                                    //İkinci matris oluşturulup özellikleri belirleniyor.
             {
                 matris2.Add(new List<NumericUpDown>());
 
@@ -61,7 +63,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris1)
+            foreach (var satir in matris1)                                                      //İlk matris forma ekleniyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -69,7 +71,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris2)
+            foreach (var satir in matris2)                                                      //İkinci matris forma ekleniyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -79,9 +81,9 @@ namespace OOPHomework2Matrix
 
         }
 
-        private void NumericUpDown1_ValueChanged(Object sender, EventArgs e)
+        private void NumericUpDown1_ValueChanged(Object sender, EventArgs e)                                    //İlk matrisin satır belirleyici değiştirilirse bu fonksiyon çalışır.
         {
-            foreach (var satir in matris1)
+            foreach (var satir in matris1)                                                      //Formdaki matris kaldırılıyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -89,9 +91,9 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            matris1.Clear();
+            matris1.Clear();                                                                                    //İlk matris temizleniyor.
 
-            for (int i = 0; i < numericUpDown1.Value; i++)
+            for (int i = 0; i < numericUpDown1.Value; i++)                                                     //Yeni satır verisine göre tekrardan matris oluşturuluyor.
             {
                 matris1.Add(new List<NumericUpDown>());
 
@@ -106,7 +108,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris1)
+            foreach (var satir in matris1)                                                  //Matris forma ekleniyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -115,9 +117,9 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void NumericUpDown2_ValueChanged(Object sender, EventArgs e)
+        private void NumericUpDown2_ValueChanged(Object sender, EventArgs e)                                //İlk matrisin sütun belirleyici değiştirilirse bu fonksiyon çalışır.
         {
-            foreach (var satir in matris1)
+            foreach (var satir in matris1)                                                  //Formdaki matris kaldırılıyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -125,11 +127,11 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            matris1.Clear();
+            matris1.Clear();                                                                                //İlk matris temizleniyor.
 
             for (int i = 0; i < numericUpDown1.Value; i++)
             {
-                matris1.Add(new List<NumericUpDown>());
+                matris1.Add(new List<NumericUpDown>());                                                 //Yeni sütun verisine göre tekrardan matris oluşturuluyor.
                 for (int j = 0; j < numericUpDown2.Value; j++)
                 {
                     matris1[i].Add(new NumericUpDown());
@@ -141,7 +143,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris1)
+            foreach (var satir in matris1)                                                  //Forma ilk matris tekrardan yeni haliyle ekleniyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -150,9 +152,9 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void NumericUpDown3_ValueChanged(Object sender, EventArgs e)
+        private void NumericUpDown3_ValueChanged(Object sender, EventArgs e)                                //İkinci matrisin satır belirleyicisi değiştirilirse bu fonksiyon çalışır.
         {
-            foreach (var satir in matris2)
+            foreach (var satir in matris2)                                                  //Formdaki matris kaldırılıyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -162,7 +164,7 @@ namespace OOPHomework2Matrix
 
             matris2.Clear();
 
-            for (int i = 0; i < numericUpDown3.Value; i++)
+            for (int i = 0; i < numericUpDown3.Value; i++)                                                  //Yeni satır değerine göre tekrar matris oluşturuluyor.
             {
                 matris2.Add(new List<NumericUpDown>());
                 for (int j = 0; j < numericUpDown4.Value; j++)
@@ -176,7 +178,7 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris2)
+            foreach (var satir in matris2)                                                  //Yeni matris forma ekleniyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -185,9 +187,9 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void NumericUpDown4_ValueChanged(Object sender, EventArgs e)
+        private void NumericUpDown4_ValueChanged(Object sender, EventArgs e)                                //İkinci matrisin sütun belirleyicisi değiştirildiğinde çalışır.
         {
-            foreach (var satir in matris2)
+            foreach (var satir in matris2)                                                  //Formdan matris kaldırılıyor.
             {
                 foreach (var eleman in satir)
                 {
@@ -197,7 +199,7 @@ namespace OOPHomework2Matrix
 
             matris2.Clear();
 
-            for (int i = 0; i < numericUpDown3.Value; i++)
+            for (int i = 0; i < numericUpDown3.Value; i++)                                                     //Yeni sütun değerine göre tekrar matris oluşturuluyor.
             {
                 matris2.Add(new List<NumericUpDown>());
 
@@ -212,8 +214,8 @@ namespace OOPHomework2Matrix
                 }
             }
 
-            foreach (var satir in matris2)
-            {
+            foreach (var satir in matris2)                                                     //Yeni matris forma ekleniyor.
+            {   
                 foreach (var eleman in satir)
                 {
                     this.Controls.Add(eleman);
@@ -221,7 +223,7 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void ButtonToplama_Click(Object sender, EventArgs e)
+        private void ButtonToplama_Click(Object sender, EventArgs e)                                           //Toplama butonuna tıklandığında çalışır. Textbox'a işlem yapıldıktan sonra toplama işleminin sonucu yazdırılır.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris 1:\r\n";
@@ -232,7 +234,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisToplami(matris1, matris2));
         }
 
-        private void ButtonCarpim_Click(Object sender, EventArgs e)
+        private void ButtonCarpim_Click(Object sender, EventArgs e)                                         //Çarpma butonuna tıklandığında çalışır. Çarpa işlemi yapıldıktan sonra sonucu textbox'a yazdırır.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris 1:\r\n";
@@ -243,7 +245,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisCarpimi(matris1, matris2));
         }
 
-        private void ButtonMatrisTers_Click(Object sender, EventArgs e)
+        private void ButtonMatrisTers_Click(Object sender, EventArgs e)                                     //İlk matrisin tersini alma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -252,7 +254,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisTers(matris1));
         }
 
-        private void ButtonMatrisTers2_Click(Object sender, EventArgs e)
+        private void ButtonMatrisTers2_Click(Object sender, EventArgs e)                                    //İkinci matrisin tersini alma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -261,7 +263,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisTers(matris2));
         }
 
-        private void ButtonMatrisTranspoz_Click(Object sender, EventArgs e)
+        private void ButtonMatrisTranspoz_Click(Object sender, EventArgs e)                                //İlk matrisin transpozunu alma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -270,7 +272,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisTranspoz(matris1));
         }
 
-        private void ButtonMatrisTranspoz2_Click(Object sender, EventArgs e)
+        private void ButtonMatrisTranspoz2_Click(Object sender, EventArgs e)                                //İkinci matrisin transpozunu alma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -279,7 +281,7 @@ namespace OOPHomework2Matrix
             SonucYazdir(Matrix.MatrisTranspoz(matris2));
         }
 
-        private void ButtonMatrisIz_Click(Object sender, EventArgs e)
+        private void ButtonMatrisIz_Click(Object sender, EventArgs e)                                       //İlk matrisin izini yazdırma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -288,7 +290,7 @@ namespace OOPHomework2Matrix
             textBoxSonuc.Text += Matrix.MatrisIz(matris1).ToString() + "\r\n";
         }
 
-        private void ButtonMatrisIz2_Click(Object sender, EventArgs e)
+        private void ButtonMatrisIz2_Click(Object sender, EventArgs e)                                      //İkinci matrisin izini yazdırma butonunun fonksiyonu.
         {
             textBoxSonuc.Clear();
             textBoxSonuc.Text += "Matris:\r\n";
@@ -297,19 +299,19 @@ namespace OOPHomework2Matrix
             textBoxSonuc.Text += Matrix.MatrisIz(matris2).ToString() + "\r\n";
         }
 
-        private void ButtonKaydet_Click(Object sender, EventArgs e)
+        private void ButtonKaydet_Click(Object sender, EventArgs e)                                         //Sonucu "kaydet.dat"a kaydetme butonunun fonksiyonu.
         {
             Matrix.MatrisYazdirma(textBoxSonuc.Lines);
         }
 
-        private void ButtonGecmis_Click(Object seber, EventArgs e)
+        private void ButtonGecmis_Click(Object seber, EventArgs e)                                          //Geçmişi "kayit.dat"tan çekme butonunun fonksiyonu.
         {
             richTextBox1.Lines = Matrix.MatrisOkuma();
         }
 
-        private void SonucYazdir<T>(List<List<T>> sonuc)
+        private void SonucYazdir<T>(List<List<T>> sonuc)                                                    //Gelen sonuç matrisini textbox'a yazdırma metodu. Generic progromlama kullanılmıştır.
         {
-            for (int i = 0; i < sonuc.Count; i++)
+            for (int i = 0; i < sonuc.Count; i++)                                                           //sonuc matrisinin elemanları tek tek textbox'a yazdırılıyor.                               
             {
                 for (int j = 0; j < sonuc[i].Count; j++)
                 {
@@ -320,9 +322,9 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void Matris1Yazdir()
+        private void Matris1Yazdir()                                                                        //Formdaki ilk matrisi textbox'a yazdırma metodu.
         {
-            for (int i = 0; i < matris1.Count; i++)
+            for (int i = 0; i < matris1.Count; i++)                                                         //İlk matrisin tüm elemanları tek tek textbox'a yazdırılıyor.        
             {
                 for (int j = 0; j < matris1[i].Count; j++)
                 {
@@ -333,9 +335,9 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void Matris2Yazdir()
+        private void Matris2Yazdir()                                                                        //Formdaki ikinci matrisi textbox'a yazdırma metodu.
         {
-            for (int i = 0; i < matris2.Count; i++)
+            for (int i = 0; i < matris2.Count; i++)                                                         //İkinci matrisin tüm elemanları tek tek textbox'a yazdırılıyor.
             {
                 for (int j = 0; j < matris2[i].Count; j++)
                 {
@@ -346,7 +348,7 @@ namespace OOPHomework2Matrix
             }
         }
 
-        private void GecmisiSifirla_Click(Object sender, EventArgs e)
+        private void GecmisiSifirla_Click(Object sender, EventArgs e)                                   //"kayit.dat" silinir ve richTextBox1'in yazısı sıfırlanır.
         {
             richTextBox1.Clear();
             File.Delete("kayit.dat");
