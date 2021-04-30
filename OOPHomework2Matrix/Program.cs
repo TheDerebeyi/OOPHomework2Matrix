@@ -114,7 +114,7 @@ namespace OOPHomework2Matrix
 
         static int MatrisDeterminant(List<List<decimal>> matris1)                                                  //Yinelemeli fonksiyon. Girilen matrisin determinantını geri döndürür.
         {
-            List<List<decimal>> kopyaMatris = new List<List<decimal>>();
+            List<List<decimal>> kucukMatris = new List<List<decimal>>();
 
             int determinant = 0;
 
@@ -124,20 +124,10 @@ namespace OOPHomework2Matrix
                 return determinant;
             }
 
+
             int satir = 0;
 
-            //Matris hesabı için Laplace açılımı kullanılacaktır.
-
-            for (int i = 0; i < matris1.Count; i++)                                                               //Laplace açılımı için bol sıfırlı satır seçiliyor.                                                 
-            {
-                for (int j = 0; j < matris1[0].Count; j++)
-                {
-                    if (matris1[i][j] == 0)
-                    {
-                        satir = i;
-                    }
-                }
-            }
+            //Matris hesabı için ilk satıra göre Laplace açılımı kullanılacaktır.
 
             List<int> kofaktorList = new List<int>();
 
@@ -155,7 +145,7 @@ namespace OOPHomework2Matrix
 
             for (int i = 0; i < matris1.Count; i++)                             //Laplace açılımında elemanın bulunduğu satır ve sütun harici diğer elemanların oluşturduğu matrisin determinantı gerekmektedir.
             {                                                                   //Bu determinantlardan matrisin satır sayısı tane oluşacak. En dış döngü matrisin satır sayısı kadar dönecek.
-                kopyaMatris.Clear();                                            //Her adım başı kopyaMatris determinant hesabı için tekrar aynı fonksiyona gönderildikten sonra tekrar kullanım için sıfırlanıyor.
+                kucukMatris.Clear();                                            //Her adım başı kopyaMatris determinant hesabı için tekrar aynı fonksiyona gönderildikten sonra tekrar kullanım için sıfırlanıyor.
                 int indis = 0;
                 for (int j = 0; j < matris1.Count; j++)                         //Matrisin tüm satırları taranıyor.
                 {
@@ -164,18 +154,18 @@ namespace OOPHomework2Matrix
                         continue;
                     }
 
-                    kopyaMatris.Add(new List<decimal>());
+                    kucukMatris.Add(new List<decimal>());
 
                     for (int k = 0; k < matris1.Count; k++)                     //Matrisin tüm sütunları taranıyor.
                     {
                         if (k != i)                                             //Eğer k, elemanın sütun sayısına eşit değilse matrisin j. satır ve k. sütunundaki eleman yeni matrise yazdırılacak.
                         {
-                            kopyaMatris[indis].Add(matris1[j][k]);
+                            kucukMatris[indis].Add(matris1[j][k]);
                         }
                     }
                     indis++;
                 }
-                kofaktorList[i] *= Matrix.MatrisDeterminant(kopyaMatris);       //Yeni matris tekrar aynı fonksiyona yollanıyor. Sonuç kofaktör listesindeki işarete göre yerine yazılıyor.
+                kofaktorList[i] *= Matrix.MatrisDeterminant(kucukMatris);       //Yeni matris tekrar aynı fonksiyona yollanıyor. Sonuç kofaktör listesindeki işarete göre yerine yazılıyor.
             }
 
             for (int i = 0; i < matris1.Count; i++)                             //Laplace açılımına göre seçilen satırdaki tüm elemanların kofaktörleri ile çarpımlarının toplamı deterninantı verir. İşlem gerçekleştiriliyor.

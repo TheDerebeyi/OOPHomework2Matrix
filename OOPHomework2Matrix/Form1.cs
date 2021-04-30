@@ -16,22 +16,22 @@ namespace OOPHomework2Matrix
         {
             InitializeComponent();
 
-            numericUpDown1.ValueChanged += new System.EventHandler(NumericUpDown1_ValueChanged);                //Event fonksiyonları ile form controlleri bağlanıyor.
-            numericUpDown2.ValueChanged += new System.EventHandler(NumericUpDown2_ValueChanged);
-            numericUpDown3.ValueChanged += new System.EventHandler(NumericUpDown3_ValueChanged);
-            numericUpDown4.ValueChanged += new System.EventHandler(NumericUpDown4_ValueChanged);
+            numericUpDown1.ValueChanged += NumericUpDown1_ValueChanged;                //Event fonksiyonları ile form controlleri bağlanıyor.
+            numericUpDown2.ValueChanged += NumericUpDown2_ValueChanged;
+            numericUpDown3.ValueChanged += NumericUpDown3_ValueChanged;
+            numericUpDown4.ValueChanged += NumericUpDown4_ValueChanged;
 
-            buttonToplama.Click += new System.EventHandler(ButtonToplama_Click);
-            buttonCarpma.Click += new System.EventHandler(ButtonCarpim_Click);
-            buttonMatrisTers.Click += new System.EventHandler(ButtonMatrisTers_Click);
-            buttonMatrisTers2.Click += new System.EventHandler(ButtonMatrisTers2_Click);
-            buttonMatrisTranspoz.Click += new System.EventHandler(ButtonMatrisTranspoz_Click);
-            buttonMatrisTranspoz2.Click += new System.EventHandler(ButtonMatrisTranspoz2_Click);
-            buttonMatrisIz.Click += new System.EventHandler(ButtonMatrisIz_Click);
-            buttonMatrisIz2.Click += new System.EventHandler(ButtonMatrisIz2_Click);
-            buttonKaydet.Click += new System.EventHandler(ButtonKaydet_Click);
-            buttonGecmis.Click += new System.EventHandler(ButtonGecmis_Click);
-            buttonSifirla.Click += new System.EventHandler(GecmisiSifirla_Click);
+            buttonToplama.Click += ButtonToplama_Click;
+            buttonCarpma.Click += ButtonCarpim_Click;
+            buttonMatrisTers.Click += ButtonMatrisTers_Click;
+            buttonMatrisTers2.Click += ButtonMatrisTers2_Click;
+            buttonMatrisTranspoz.Click += ButtonMatrisTranspoz_Click;
+            buttonMatrisTranspoz2.Click += ButtonMatrisTranspoz2_Click;
+            buttonMatrisIz.Click += ButtonMatrisIz_Click;
+            buttonMatrisIz2.Click += ButtonMatrisIz2_Click;
+            buttonKaydet.Click += ButtonKaydet_Click;
+            buttonGecmis.Click += ButtonGecmis_Click;
+            buttonSifirla.Click += GecmisiSifirla_Click;
 
             for (int i = 0; i < numericUpDown1.Value; i++)                                                      //Default olarak formda 2x2'lik matrisler oluşturuluyor ve özellikleri belirleniyor.
             {
@@ -304,7 +304,7 @@ namespace OOPHomework2Matrix
             Matrix.MatrisYazdirma(textBoxSonuc.Lines);
         }
 
-        private void ButtonGecmis_Click(Object seber, EventArgs e)                                          //Geçmişi "kayit.dat"tan çekme butonunun fonksiyonu.
+        private void ButtonGecmis_Click(Object sender, EventArgs e)                                          //Geçmişi "kayit.dat"tan çekme butonunun fonksiyonu.
         {
             richTextBox1.Lines = Matrix.MatrisOkuma();
         }
@@ -315,7 +315,7 @@ namespace OOPHomework2Matrix
             {
                 for (int j = 0; j < sonuc[i].Count; j++)
                 {
-                    textBoxSonuc.Text += sonuc[i][j] + " ";
+                    textBoxSonuc.Text += String.Format("{0:F2} ",sonuc[i][j]);
                 }
 
                 textBoxSonuc.Text += "\r\n";
