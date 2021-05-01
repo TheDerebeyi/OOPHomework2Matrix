@@ -1,4 +1,17 @@
-﻿using System;
+﻿/****************************************************************************
+**	    				    SAKARYA ÜNİVERSİTESİ
+**	    			BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ
+**	    			    BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
+**	    			   NESNEYE DAYALI PROGRAMLAMA DERSİ
+**		    			    2020-2021 BAHAR DÖNEMİ
+**	
+**				    ÖDEV NUMARASI..........: Ödev 2 Soru 2
+**				    ÖĞRENCİ ADI............: Lütfi Mert Kahraman   
+**				    ÖĞRENCİ NUMARASI.......: B201210040
+**                  DERSİN ALINDIĞI GRUP...: 1. Öğretim D Grubu
+****************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
